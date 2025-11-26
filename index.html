@@ -1,26 +1,365 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Site Tipo Linktree</title>
+    <title>Rodrigo Azevedo | Analista de CRM Sr.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary: #ec4899;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --glass: rgba(255, 255, 255, 0.1);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Animated Background */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .bg-animation span {
+            position: absolute;
+            display: block;
+            width: 20px;
+            height: 20px;
+            background: rgba(99, 102, 241, 0.1);
+            animation: move 25s infinite;
+            bottom: -150px;
+            border-radius: 50%;
+        }
+
+        .bg-animation span:nth-child(1) { left: 10%; width: 80px; height: 80px; animation-delay: 0s; }
+        .bg-animation span:nth-child(2) { left: 20%; width: 40px; height: 40px; animation-delay: 2s; animation-duration: 12s; }
+        .bg-animation span:nth-child(3) { left: 35%; width: 60px; height: 60px; animation-delay: 4s; }
+        .bg-animation span:nth-child(4) { left: 50%; width: 100px; height: 100px; animation-delay: 0s; animation-duration: 18s; }
+        .bg-animation span:nth-child(5) { left: 65%; width: 50px; height: 50px; animation-delay: 0s; }
+        .bg-animation span:nth-child(6) { left: 75%; width: 70px; height: 70px; animation-delay: 3s; }
+        .bg-animation span:nth-child(7) { left: 85%; width: 90px; height: 90px; animation-delay: 7s; }
+        .bg-animation span:nth-child(8) { left: 90%; width: 45px; height: 45px; animation-delay: 15s; animation-duration: 45s; }
+
+        @keyframes move {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-1500px) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        /* Main Container */
+        .container {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            max-width: 420px;
+            padding: 20px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 40px 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Profile Section */
+        .profile {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .profile-image-container {
+            position: relative;
+            width: 130px;
+            height: 130px;
+            margin: 0 auto 20px;
+        }
+
+        .profile-image {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid transparent;
+            background: linear-gradient(var(--dark), var(--dark)) padding-box,
+                        linear-gradient(135deg, var(--primary), var(--secondary)) border-box;
+            animation: pulse-border 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse-border {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.4); }
+            50% { box-shadow: 0 0 0 15px rgba(99, 102, 241, 0); }
+        }
+
+        .status-indicator {
+            position: absolute;
+            bottom: 8px;
+            right: 8px;
+            width: 20px;
+            height: 20px;
+            background: #22c55e;
+            border-radius: 50%;
+            border: 3px solid var(--dark);
+            animation: status-pulse 2s infinite;
+        }
+
+        @keyframes status-pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .profile h1 {
+            color: var(--light);
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, #fff 0%, #cbd5e1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .profile .title {
+            color: #94a3b8;
+            font-size: 0.95rem;
+            font-weight: 400;
+            margin-bottom: 15px;
+        }
+
+        .profile .bio {
+            color: #64748b;
+            font-size: 0.85rem;
+            line-height: 1.6;
+        }
+
+        /* Links Section */
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .link-item {
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding: 16px 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow: hidden;
+        }
+
+        .link-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.5s;
+        }
+
+        .link-item:hover::before {
+            left: 100%;
+        }
+
+        .link-item:hover {
+            transform: translateY(-3px) scale(1.02);
+            border-color: rgba(99, 102, 241, 0.5);
+            box-shadow: 0 10px 40px -10px rgba(99, 102, 241, 0.4);
+        }
+
+        .link-item i {
+            font-size: 1.3rem;
+            margin-right: 15px;
+            width: 24px;
+            text-align: center;
+        }
+
+        .link-item.linkedin i { color: #0a66c2; }
+        .link-item.website i { color: var(--secondary); }
+        .link-item.email i { color: #ea4335; }
+        .link-item.github i { color: #fff; }
+
+        .link-item .arrow {
+            margin-left: auto;
+            opacity: 0;
+            transform: translateX(-10px);
+            transition: all 0.3s;
+        }
+
+        .link-item:hover .arrow {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Social Icons */
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .social-icon {
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            color: #94a3b8;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .social-icon:hover {
+            transform: translateY(-5px) rotate(5deg);
+            color: var(--light);
+        }
+
+        .social-icon.linkedin:hover { background: #0a66c2; }
+        .social-icon.github:hover { background: #333; }
+        .social-icon.email:hover { background: #ea4335; }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 25px;
+            color: #475569;
+            font-size: 0.75rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            .card {
+                padding: 30px 20px;
+            }
+            .profile h1 {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Welcome to Site Tipo Linktree</h1>
-    </header>
-    <main>
-        <section>
-            <h2>Links</h2>
-            <ul>
-                <li><a href="https://example1.com">Example Link 1</a></li>
-                <li><a href="https://example2.com">Example Link 2</a></li>
-                <li><a href="https://example3.com">Example Link 3</a></li>
-            </ul>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2025 Site Tipo Linktree. All rights reserved.</p>
-    </footer>
+    <!-- Animated Background -->
+    <div class="bg-animation">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <div class="container">
+        <div class="card">
+            <!-- Profile -->
+            <div class="profile">
+                <div class="profile-image-container">
+                    <img src="SUA_FOTO_URL_AQUI" alt="Rodrigo Azevedo" class="profile-image">
+                    <div class="status-indicator"></div>
+                </div>
+                <h1>Rodrigo Azevedo</h1>
+                <p class="title">Analista de CRM Sr.</p>
+                <p class="bio">Especialista em estratégias de CRM, automação de marketing e análise de dados para otimização de relacionamento com clientes.</p>
+            </div>
+
+            <!-- Links -->
+            <div class="links">
+                <a href="https://www.linkedin.com/in/rodrigo-azevedo88" target="_blank" class="link-item linkedin">
+                    <i class="fab fa-linkedin"></i>
+                    <span>LinkedIn</span>
+                    <i class="fas fa-arrow-right arrow"></i>
+                </a>
+                
+                <a href="https://www.rsolutionsbr.com" target="_blank" class="link-item website">
+                    <i class="fas fa-globe"></i>
+                    <span>R Solutions BR</span>
+                    <i class="fas fa-arrow-right arrow"></i>
+                </a>
+
+                <a href="https://github.com/rodrigoazevedo1988" target="_blank" class="link-item github">
+                    <i class="fab fa-github"></i>
+                    <span>GitHub</span>
+                    <i class="fas fa-arrow-right arrow"></i>
+                </a>
+            </div>
+
+            <!-- Social Icons -->
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/rodrigo-azevedo88" target="_blank" class="social-icon linkedin">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://github.com/rodrigoazevedo1988" target="_blank" class="social-icon github">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="mailto:seu@email.com" class="social-icon email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+
+            <div class="footer">
+                © 2025 Rodrigo Azevedo
+            </div>
+        </div>
+    </div>
 </body>
 </html>
