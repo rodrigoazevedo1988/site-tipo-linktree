@@ -194,4 +194,3 @@ Se este projeto foi útil para você, considere dar uma ⭐ no repositório!
 <p align="center">
   Feito com 💜 por Rodrigo Azevedo
 </p>
-```
