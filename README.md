@@ -1,11 +1,12 @@
-```markdown
-# 🔗 Linktree Clone - Rodrigo Azevedo
+🔗 Linktree Clone - Rodrigo Azevedo
 
 Um clone moderno e elegante do Linktree, desenvolvido com HTML e CSS puro, apresentando design glassmorphism, animações suaves e totalmente responsivo.
 
+![Preview](https://rodrigoazevedo1988.github.io/site-tipo-linktree/preview.png)
+
 ---
 
-## ✨ Características
+✨ Características
 
 - **Design Glassmorphism** — Efeito de vidro fosco com blur e transparências
 - **Animações Fluidas** — Background animado com partículas flutuantes
