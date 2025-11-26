@@ -1,5 +1,3 @@
-# README.md para seu Linktree Clone
-
 ```markdown
 # 🔗 Linktree Clone - Rodrigo Azevedo
 
