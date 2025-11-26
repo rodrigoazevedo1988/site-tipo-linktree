@@ -1,164 +1,200 @@
-# Site Tipo Linktree - Rodrigo Azevedo
+# README.md para seu Linktree Clone
 
-Um site pessoal minimalista tipo Linktree, desenvolvido com HTML5, CSS3 e design responsivo. Perfeito para centralizar seus principais links profissionais em uma única página elegante.
+```markdown
+# 🔗 Linktree Clone - Rodrigo Azevedo
 
-## 🌟 Características
+Um clone moderno e elegante do Linktree, desenvolvido com HTML e CSS puro, apresentando design glassmorphism, animações suaves e totalmente responsivo.
 
-- ✨ Design minimalista e moderno
-- 📱 Totalmente responsivo (mobile-first)
-- 🎨 Tema escuro elegante
-- ⚡ Carregamento rápido
-- ♿ Acessibilidade otimizada
-- 🔗 Links para redes profissionais
+![Preview](preview.png)
 
-## 📁 Estrutura do Projeto
+---
 
-```
-site-tipo-linktree/
-├── index.html          # Arquivo principal HTML
-├── style.css           # Estilos CSS
-└── README.md           # Este arquivo
-```
+## ✨ Características
 
-## 🚀 Como Usar
+- **Design Glassmorphism** — Efeito de vidro fosco com blur e transparências
+- **Animações Fluidas** — Background animado com partículas flutuantes
+- **Hover Effects** — Efeitos interativos nos links com shimmer e elevação
+- **Foto de Perfil Animada** — Borda gradiente pulsante com indicador de status
+- **100% Responsivo** — Adaptável para desktop, tablet e mobile
+- **Performance Otimizada** — Apenas HTML e CSS, sem dependências JavaScript
+- **Dark Mode Nativo** — Tema escuro elegante por padrão
 
-### Localmente
+---
 
-1. Clone o repositório:
+## 🚀 Início Rápido
+
+### 1. Clone o Repositório
+
 ```bash
 git clone https://github.com/rodrigoazevedo1988/site-tipo-linktree.git
 cd site-tipo-linktree
 ```
 
-2. Abra o arquivo `index.html` no seu navegador:
-```bash
-# No macOS
-open index.html
+### 2. Personalize suas Informações
 
-# No Linux
-xdg-open index.html
+Abra o arquivo `index.html` e edite as seguintes seções:
 
-# No Windows
-start index.html
+#### Foto de Perfil
+```html
+<img src="SUA_FOTO_URL_AQUI" alt="Seu Nome" class="profile-image">
 ```
 
-### Online (GitHub Pages)
-
-Se habilitado no repositório, acesse diretamente pelo GitHub Pages.
-
-## 🎯 Personalização
-
-Para personalizar o site com suas informações:
-
-### 1. Editar Informações Pessoais (index.html)
-
+#### Nome e Título
 ```html
-<!-- Alterar a foto de perfil -->
-<img src="sua-url-de-imagem.jpg" alt="Foto de perfil - Seu Nome">
-
-<!-- Alterar o nome -->
 <h1>Seu Nome</h1>
+<p class="title">Seu Cargo / Título</p>
+<p class="bio">Sua descrição profissional aqui...</p>
+```
 
-<!-- Alterar a descrição -->
-<p class="subtitle">Sua profissão | Suas paixões</p>
-
-<!-- Adicionar/editar links -->
-<a href="seu-link-aqui" target="_blank" rel="noopener noreferrer" class="link link--primary">
-    Nome do Link
+#### Links Principais
+```html
+<a href="https://seu-linkedin.com" target="_blank" class="link-item linkedin">
+    <i class="fab fa-linkedin"></i>
+    <span>LinkedIn</span>
+    <i class="fas fa-arrow-right arrow"></i>
 </a>
 ```
 
-### 2. Personalizar Cores (style.css)
+#### Email de Contato
+```html
+<a href="mailto:seu@email.com" class="social-icon email">
+```
 
-As cores principais podem ser facilmente ajustadas:
+### 3. Deploy
+
+#### Opção A: GitHub Pages (Recomendado)
+
+1. Faça push das alterações para o repositório
+2. Acesse **Settings** > **Pages**
+3. Em **Source**, selecione a branch `main`
+4. Seu site estará disponível em `https://seuusuario.github.io/site-tipo-linktree`
+
+#### Opção B: Netlify
+
+1. Arraste a pasta do projeto para [netlify.com/drop](https://netlify.com/drop)
+2. Seu site estará online instantaneamente
+
+#### Opção C: Vercel
+
+```bash
+npm i -g vercel
+vercel
+```
+
+---
+
+## 🎨 Personalização
+
+### Alterar Cores
+
+Edite as variáveis CSS no início do arquivo `<style>`:
 
 ```css
-/* Cor de fundo */
-background-color: #000000;
-
-/* Cor de hover dos botões */
-background-color: #437163;
-
-/* Cor do texto */
-color: #ffffff;
+:root {
+    --primary: #6366f1;      /* Cor principal (roxo) */
+    --primary-dark: #4f46e5; /* Cor principal escura */
+    --secondary: #ec4899;    /* Cor secundária (rosa) */
+    --dark: #0f172a;         /* Fundo escuro */
+    --light: #f8fafc;        /* Texto claro */
+}
 ```
+
+### Adicionar Novos Links
+
+Copie e cole este bloco dentro da `<div class="links">`:
+
+```html
+<a href="https://seu-link.com" target="_blank" class="link-item">
+    <i class="fab fa-icon-name"></i>
+    <span>Nome do Link</span>
+    <i class="fas fa-arrow-right arrow"></i>
+</a>
+```
+
+### Ícones Disponíveis
+
+Este projeto utiliza [Font Awesome 6](https://fontawesome.com/icons). Alguns ícones úteis:
+
+| Plataforma | Classe do Ícone |
+|------------|-----------------|
+| LinkedIn | `fab fa-linkedin` |
+| GitHub | `fab fa-github` |
+| Instagram | `fab fa-instagram` |
+| Twitter/X | `fab fa-x-twitter` |
+| YouTube | `fab fa-youtube` |
+| TikTok | `fab fa-tiktok` |
+| WhatsApp | `fab fa-whatsapp` |
+| Telegram | `fab fa-telegram` |
+| Email | `fas fa-envelope` |
+| Website | `fas fa-globe` |
+| Portfólio | `fas fa-briefcase` |
+
+### Desativar Animações
+
+Para remover as animações de fundo, delete ou comente:
+
+```html
+<!-- <div class="bg-animation">...</div> -->
+```
+
+---
+
+## 📁 Estrutura do Projeto
+
+```
+site-tipo-linktree/
+│
+├── index.html      # Arquivo principal (HTML + CSS inline)
+├── README.md       # Documentação
+├── preview.png     # Screenshot para o README
+└── assets/         # (opcional) Imagens e recursos
+    └── profile.jpg
+```
+
+---
+
+## 📱 Responsividade
+
+| Dispositivo | Largura | Status |
+|-------------|---------|--------|
+| Mobile | < 480px | ✅ |
+| Tablet | 481px - 768px | ✅ |
+| Desktop | > 769px | ✅ |
+
+---
 
 ## 🛠️ Tecnologias Utilizadas
 
-- **HTML5** - Semântica e estrutura
-- **CSS3** - Estilos e responsividade
-- **Favicon** - Ícone da página (opcional)
+- **HTML5** — Estrutura semântica
+- **CSS3** — Estilos e animações
+- **Google Fonts** — Tipografia Inter
+- **Font Awesome 6** — Biblioteca de ícones
 
-## 💡 Melhorias Implementadas
+---
 
-- ✅ Removido link do Twitter
-- ✅ Código refatorado com melhor semântica HTML
-- ✅ CSS reorganizado com comentários e melhor estrutura
-- ✅ Adicionado suporte a acessibilidade
-- ✅ Melhorado design responsivo
-- ✅ Adicionados estados de foco para navegação por teclado
-- ✅ Otimizadas transições e animações
+## 📄 Licença
 
-## 📖 Estrutura HTML
+Este projeto está sob a licença MIT. Sinta-se livre para usar, modificar e distribuir.
 
-### Elementos Principais
-
-- `<main>` - Conteúdo principal da página
-- `<section class="profile">` - Seção de perfil
-- `<nav class="links">` - Navegação com os links
-
-### Meta Tags
-
-- `charset` - Codificação UTF-8
-- `viewport` - Responsividade
-- `description` - Descrição para SEO
-- `theme-color` - Cor do tema
-
-## 🎨 Padrão de Design
-
-### Breakpoints Responsivos
-
-- **Desktop**: 700px+
-- **Tablet**: 600px - 700px
-- **Mobile**: < 600px
-
-### Espaçamento
-
-- Padding padrão: 20px
-- Margin padrão: 0
-- Gap entre links: 12px
-
-## ♿ Acessibilidade
-
-O projeto segue boas práticas de acessibilidade:
-
-- ✅ Atributos `alt` descritivos em imagens
-- ✅ Semântica HTML5 apropriada
-- ✅ Contraste adequado de cores
-- ✅ Estados de foco visíveis
-- ✅ Links com `rel="noopener noreferrer"` para segurança
-
-## 📱 Compatibilidade
-
-- ✅ Chrome/Edge (últimas versões)
-- ✅ Firefox (últimas versões)
-- ✅ Safari (últimas versões)
-- ✅ Navegadores móveis (iOS Safari, Chrome Mobile)
-
-## 📝 Licença
-
-Este projeto é de uso livre. Sinta-se à vontade para usar e modificar conforme necessário.
+---
 
 ## 👤 Autor
 
 **Rodrigo Azevedo**
-- [LinkedIn](https://www.linkedin.com/in/rodrigo-azevedo88/)
-- [GitHub](https://github.com/rodrigoazevedo1988)
 
-## 🤝 Contribuições
-
-Contribuições, issues e pull requests são bem-vindos!
+- LinkedIn: [@rodrigo-azevedo88](https://www.linkedin.com/in/rodrigo-azevedo88)
+- Website: [rsolutionsbr.com](https://www.rsolutionsbr.com)
+- GitHub: [@rodrigoazevedo1988](https://github.com/rodrigoazevedo1988)
 
 ---
 
-**Desenvolvido com ❤️ por Rodrigo Azevedo**
+## ⭐ Apoie o Projeto
+
+Se este projeto foi útil para você, considere dar uma ⭐ no repositório!
+
+---
+
+<p align="center">
+  Feito com 💜 por Rodrigo Azevedo
+</p>
+```
