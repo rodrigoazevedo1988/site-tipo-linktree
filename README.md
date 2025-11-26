@@ -2,7 +2,7 @@
 
 Um clone moderno e elegante do Linktree, desenvolvido com HTML e CSS puro, apresentando design glassmorphism, animações suaves e totalmente responsivo.
 
-(https://github.com/rodrigoazevedo1988/site-tipo-linktree/blob/main/Screenshot_6.png?raw=true)
+![Preview](https://raw.githubusercontent.com/rodrigoazevedo1988/site-tipo-linktree/main/Screenshot_6.png)
 
 ---
 
