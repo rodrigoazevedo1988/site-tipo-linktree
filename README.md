@@ -3,8 +3,6 @@
 
 Um clone moderno e elegante do Linktree, desenvolvido com HTML e CSS puro, apresentando design glassmorphism, animações suaves e totalmente responsivo.
 
-![Preview](https://api.microlink.io/?url=https://rodrigoazevedo1988.github.io/site-tipo-linktree&screenshot=true&meta=false&embed=screenshot.url)
-
 ---
 
 ## ✨ Características
